@@ -20,15 +20,14 @@ btn1.addEventListener("click", () => {
 
   workingArea.removeAttribute("style");
 
-  if(inputValue.slice(0, 5)!=="chai-") {
-    alert("Something went wrong.");
-    return;
-  }
-  else if(inputValue==="") {
+  if(inputValue==="") {
     alert("Input space cannot be empty.");
     return;
   }
-
+  else if(inputValue.slice(0, 5)!=="chai-") {
+    alert("Something went wrong.");
+    return;
+  }
   else if(
       inputValue.slice(5, 7)==="p-" ||
       inputValue.slice(5, 7)==="m-" || 
