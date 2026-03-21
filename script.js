@@ -25,10 +25,11 @@ btn1.addEventListener("click", () => {
     return;
   }
   else if(inputValue.slice(0, 5)!=="chai-") {
-    alert("Something went wrong.");
+    alert(`Doesn't starts with "chai-"`);
     return;
   }
-  else if(
+
+  if(
       inputValue.slice(5, 7)==="p-" ||
       inputValue.slice(5, 7)==="m-" || 
       inputValue.slice(5, 7)==="w-" ||
