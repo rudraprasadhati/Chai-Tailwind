@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 30px;
+}
+
+body {
+  background-color: rgb(255, 210, 155);
+  width: 100vw;
+  height: 100vh;
+}
+
+#header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chai-aur-code-logo {
+  width: 50px;;
+}
+
+#hero-section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+
+#input-tag {
+  font-size: 20px;
+  width: 30vw;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 5px;
+  border: 3px solid orange;
+}
+
+#working-area {
+  width: 50vw;
+  height: 50vh;
+  background-color:rgb(255, 213, 115);
+  border-radius: 10px;
+  border: 3px solid coral;
+}
+
+#working-area-label {
+  margin: 10px;
+  font-size: large;
+  color: coral;
+  display: flex;
+  align-items: center;
+}
+
+#button1 {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border: 3px solid orange;
+  background-color: coral;
+  cursor: pointer;
+  box-shadow: 0 0 10px orange, 0 0 20px coral;
+  transition: 0.3s;
+
+}
+
+#button2 {
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0px 10px;
+  font-size: 20px;
+  border: 3px solid orange;
+  background-color: coral;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#button1:hover, #button2:hover {
+  background-color: rgb(230, 89, 89);
+}
+
+#available {
+  font-size: medium;
+  text-align: center;
+  background-color: rgb(233, 153, 34);
+  border-radius: 10px;
+  padding: 10px;
+}
+#example {
+  font-size: medium;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(233, 153, 34);
+  border-radius: 10px;
+  padding: 10px;
+}
