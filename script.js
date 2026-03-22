@@ -61,7 +61,7 @@ btn1.addEventListener("click", () => {
         workingArea.style.borderRadius = `${parseInt(element.slice(8), 10)}px`;
       }
       else {
-          alert("Something went wrong.");
+          alert("Invalid property value.");
           return;
       }
     }
@@ -76,7 +76,7 @@ btn1.addEventListener("click", () => {
         workingArea.style.textAlign = element.slice(8);
       }
       else {
-        alert("Something went wrong.");
+        alert("Invalid property value.");
         return;
       }
     }
