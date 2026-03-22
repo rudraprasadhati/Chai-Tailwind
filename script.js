@@ -20,7 +20,9 @@ btn1.addEventListener("click", () => {
 
   const inputValue = inputText.value;
   const arr = inputValue.split(" ");
-  arr.forEach(element => {
+  
+  for (let index = 0; index < arr.length; index++) {
+    const element = arr[index];
     if(element==="") {
     alert("Invalid empty space.");
     return;
@@ -84,7 +86,7 @@ btn1.addEventListener("click", () => {
       alert("Something went wrong.");
       return;
     }
-  });
+  };
   
 })
 
