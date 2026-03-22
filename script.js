@@ -22,7 +22,7 @@ btn1.addEventListener("click", () => {
   const arr = inputValue.split(" ");
   arr.forEach(element => {
     if(element==="") {
-    alert("Input space cannot be empty.");
+    alert("Invalid empty space.");
     return;
     }
     else if(element.slice(0, 5)!=="chai-") {
