@@ -16,73 +16,76 @@ const workingArea = document.getElementById("working-area");
 
 btn1.addEventListener("click", () => {
 
-  const inputValue = inputText.value;
-
   workingArea.removeAttribute("style");
 
-  if(inputValue==="") {
+  const inputValue = inputText.value;
+  const arr = inputValue.split(" ");
+  arr.forEach(element => {
+    if(element==="") {
     alert("Input space cannot be empty.");
     return;
-  }
-  else if(inputValue.slice(0, 5)!=="chai-") {
-    alert(`Doesn't starts with "chai-"`);
-    return;
-  }
+    }
+    else if(element.slice(0, 5)!=="chai-") {
+      alert(`Doesn't starts with "chai-"`);
+      return;
+    }
 
-  if(
-      inputValue.slice(5, 7)==="p-" ||
-      inputValue.slice(5, 7)==="m-" || 
-      inputValue.slice(5, 7)==="w-" ||
-      inputValue.slice(5, 7)==="h-" ||
-      inputValue.slice(5, 8)==="fw-" ||
-      inputValue.slice(5, 8)==="fs-" ||
-      inputValue.slice(5, 8)==="br-"
-    ) {
-    if(inputValue.slice(5, 7)==="p-" && typeof parseInt(inputValue.slice(7), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(7), 10))) {
-      workingArea.style.padding = `${parseInt(inputValue.slice(7), 10)}px`;
+    if(
+        element.slice(5, 7)==="p-" ||
+        element.slice(5, 7)==="m-" || 
+        element.slice(5, 7)==="w-" ||
+        element.slice(5, 7)==="h-" ||
+        element.slice(5, 8)==="fw-" ||
+        element.slice(5, 8)==="fs-" ||
+        element.slice(5, 8)==="br-"
+      ) {
+      if(element.slice(5, 7)==="p-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+        workingArea.style.padding = `${parseInt(element.slice(7), 10)}px`;
+      }
+      else if(element.slice(5, 7)==="m-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+        workingArea.style.margin = `${parseInt(element.slice(7), 10)}px`;
+      }
+      else if(element.slice(5, 7)==="w-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+        workingArea.style.width = `${parseInt(element.slice(7), 10)}px`;
+      }
+      else if(element.slice(5, 7)==="h-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+        workingArea.style.height = `${parseInt(element.slice(7), 10)}px`;
+      }
+      else if(element.slice(5, 8)==="fw-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+        workingArea.style.fontWeight = `${parseInt(element.slice(8), 10)}`;
+      }
+      else if(element.slice(5, 8)==="fs-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+        workingArea.style.fontSize = `${parseInt(element.slice(8), 10)}px`;
+      }
+      else if(element.slice(5, 8)==="br-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+        workingArea.style.borderRadius = `${parseInt(element.slice(8), 10)}px`;
+      }
+      else {
+          alert("Something went wrong.");
+          return;
+      }
     }
-    else if(inputValue.slice(5, 7)==="m-" && typeof parseInt(inputValue.slice(7), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(7), 10))) {
-      workingArea.style.margin = `${parseInt(inputValue.slice(7), 10)}px`;
-    }
-    else if(inputValue.slice(5, 7)==="w-" && typeof parseInt(inputValue.slice(7), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(7), 10))) {
-      workingArea.style.width = `${parseInt(inputValue.slice(7), 10)}px`;
-    }
-    else if(inputValue.slice(5, 7)==="h-" && typeof parseInt(inputValue.slice(7), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(7), 10))) {
-      workingArea.style.height = `${parseInt(inputValue.slice(7), 10)}px`;
-    }
-    else if(inputValue.slice(5, 8)==="fw-" && typeof parseInt(inputValue.slice(8), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(8), 10))) {
-      workingArea.style.fontWeight = `${parseInt(inputValue.slice(8), 10)}`;
-    }
-    else if(inputValue.slice(5, 8)==="fs-" && typeof parseInt(inputValue.slice(8), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(8), 10))) {
-      workingArea.style.fontSize = `${parseInt(inputValue.slice(8), 10)}px`;
-    }
-    else if(inputValue.slice(5, 8)==="br-" && typeof parseInt(inputValue.slice(8), 10) === "number" && !Number.isNaN(parseInt(inputValue.slice(8), 10))) {
-      workingArea.style.borderRadius = `${parseInt(inputValue.slice(8), 10)}px`;
-    }
-    else {
+    else if(element.slice(5,7)==="c-" || element.slice(5,8)==="bg-" || element.slice(5,8)==="ta-") {
+      if(element.slice(5,7)==="c-" && CSS.supports(`color: ${element.slice(7)}`)) {
+        workingArea.style.color = element.slice(7);
+      }
+      else if(element.slice(5,8)==="bg-" && CSS.supports(`background-color: ${element.slice(8)}`)) {
+        workingArea.style.backgroundColor = element.slice(8);
+      }
+      else if(element.slice(5,8)==="ta-" && CSS.supports(`text-align: ${element.slice(8)}`)) {
+        workingArea.style.textAlign = element.slice(8);
+      }
+      else {
         alert("Something went wrong.");
         return;
-    }
-  }
-  else if(inputValue.slice(5,7)==="c-" || inputValue.slice(5,8)==="bg-" || inputValue.slice(5,8)==="ta-") {
-    if(inputValue.slice(5,7)==="c-" && CSS.supports(`color: ${inputValue.slice(7)}`)) {
-      workingArea.style.color = inputValue.slice(7);
-    }
-    else if(inputValue.slice(5,8)==="bg-" && CSS.supports(`background-color: ${inputValue.slice(8)}`)) {
-      workingArea.style.backgroundColor = inputValue.slice(8);
-    }
-    else if(inputValue.slice(5,8)==="ta-" && CSS.supports(`text-align: ${inputValue.slice(8)}`)) {
-      workingArea.style.textAlign = inputValue.slice(8);
+      }
     }
     else {
       alert("Something went wrong.");
       return;
     }
-  }
-  else {
-    alert("Something went wrong.");
-    return;
-  }
+  });
+  
 })
 
 btn2.addEventListener("click", () => {
