@@ -41,25 +41,25 @@ btn1.addEventListener("click", () => {
         element.slice(5, 8)==="fs-" ||
         element.slice(5, 8)==="br-"
       ) {
-      if(element.slice(5, 7)==="p-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+      if(element.slice(5, 7)==="p-" && element.slice(7)!=="" && !Number.isNaN(Number(element.slice(7)))) {
         workingArea.style.padding = `${parseInt(element.slice(7), 10)}px`;
       }
-      else if(element.slice(5, 7)==="m-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+      else if(element.slice(5, 7)==="m-" && element.slice(7)!=="" && !Number.isNaN(Number(element.slice(7)))) {
         workingArea.style.margin = `${parseInt(element.slice(7), 10)}px`;
       }
-      else if(element.slice(5, 7)==="w-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+      else if(element.slice(5, 7)==="w-" && element.slice(7)!=="" && !Number.isNaN(Number(element.slice(7)))) {
         workingArea.style.width = `${parseInt(element.slice(7), 10)}px`;
       }
-      else if(element.slice(5, 7)==="h-" && typeof parseInt(element.slice(7), 10) === "number" && !Number.isNaN(parseInt(element.slice(7), 10))) {
+      else if(element.slice(5, 7)==="h-" && element.slice(7)!=="" && !Number.isNaN(Number(element.slice(7)))) {
         workingArea.style.height = `${parseInt(element.slice(7), 10)}px`;
       }
-      else if(element.slice(5, 8)==="fw-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+      else if(element.slice(5, 8)==="fw-" && element.slice(8)!=="" && !Number.isNaN(Number(element.slice(8)))) {
         workingArea.style.fontWeight = `${parseInt(element.slice(8), 10)}`;
       }
-      else if(element.slice(5, 8)==="fs-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+      else if(element.slice(5, 8)==="fs-" && element.slice(8)!=="" && !Number.isNaN(Number(element.slice(8)))) {
         workingArea.style.fontSize = `${parseInt(element.slice(8), 10)}px`;
       }
-      else if(element.slice(5, 8)==="br-" && typeof parseInt(element.slice(8), 10) === "number" && !Number.isNaN(parseInt(element.slice(8), 10))) {
+      else if(element.slice(5, 8)==="br-" && element.slice(8)!=="" && !Number.isNaN(Number(element.slice(8)))) {
         workingArea.style.borderRadius = `${parseInt(element.slice(8), 10)}px`;
       }
       else {
